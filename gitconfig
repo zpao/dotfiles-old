@@ -1,14 +1,18 @@
 [user]
-	name = Ryan Bates
-	email = ryan@railscasts.com
+	name = Paul O’Shannessy
+	email = paul@oshannessy.com
 [alias]
 	co = checkout
+	st = status
 [color]
 	diff = auto
 	status = auto
 	branch = auto
 [core]
-	excludesfile = /Users/rbates/.gitignore
+	excludesfile = /Users/pao/.gitignore
 	editor = mate -w
 [apply]
 	whitespace = nowarn
+[github]
+	user = zpao
+	token = f1dd79c9cfb1dcd8cfc910e46f6ad2d1
