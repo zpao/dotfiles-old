@@ -26,3 +26,8 @@ make()
   /usr/bin/make "$@" 2>&1 | sed -E -e "/[Ee]rror[: ]/ s%$pathpat%$ccred&$ccend%g" -e "/[Ww]arning[: ]/ s%$pathpat%$ccyellow&$ccend%g" -e "s/(TEST-UNEXPECTED-[A-Z]+)/$ccred\1$ccend/" -e "s/(TEST-PASS)/$ccgreen\1$ccend/"
   return ${PIPESTATUS[0]}
 }
+
+# Django
+alias django-admin="python /Library/Python/2.5/site-packages/django/bin/django-admin.py"
+alias runserver="./manage.py runserver"
+alias syncdb="./manage.py syncdb"
