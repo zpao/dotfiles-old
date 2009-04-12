@@ -1,6 +1,9 @@
 #!/usr/bin/ruby
 require 'irb/completion'
 require 'irb/ext/save-history'
+require 'rubygems'
+require 'wirble'
+require 'pp'
 
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
@@ -31,3 +34,14 @@ class Object
 end
 
 load File.dirname(__FILE__) + '/.railsrc' if $0 == 'irb' && ENV['RAILS_ENV']
+
+# Wirble
+Wirble.init
+Wirble.colorize
+
+# Log to STDOUT if in Rails
+if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
+ require 'logger'
+ RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
+end
+
