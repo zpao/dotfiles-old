@@ -6,3 +6,6 @@ export LESSEDIT='mate -l %lm %f'
 export HISTCONTROL=erasedups
 export HISTSIZE=10000
 shopt -s histappend
+
+# Directory shortcuts to keep other scripts cleaner
+export CODE=$HOME/dev

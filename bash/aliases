@@ -1,5 +1,5 @@
 # changing directory to code project
-function d { cd ~/dev/$1; }
+function d { cd $CODE/$1; }
 
 # misc
 alias reload='. ~/.bash_profile'
