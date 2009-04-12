@@ -3,10 +3,15 @@ require 'rake'
 desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
+  pwd = `pwd`.strip
   Dir['*'].each do |file|
     next if %w[Rakefile README LICENSE].include? file
+    f = File.join(ENV['HOME'], ".#{file}")
+    next if File.exist?(f) &&
+            File.ftype(f) == "link" &&
+            File.readlink(f) == "#{pwd}/#{file}"
     
-    if File.exist?(File.join(ENV['HOME'], ".#{file}"))
+    if File.exist?(f)
       if replace_all
         replace_file(file)
       else
