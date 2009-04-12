@@ -1,15 +1,28 @@
-. ~/.zsh/aliases
-
 # changing directory to code project
-function c { cd ~/code/$1; }
-
-# alternative to "rails" command to use templates
-function railsapp {
-  template=$1
-  appname=$2
-  shift 2
-  rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
-}
+function d { cd ~/dev/$1; }
 
 # misc
 alias reload='. ~/.bash_profile'
+
+# copy current directory to the clipboard (OS X specific)
+alias pwdcp="pwd | pbcopy"
+
+# ls variations
+alias ls="ls -FGa"
+alias ll="ls -lh"
+
+# mozilla specific
+function moz { cd ~/mozilla/mozilla-$1; }
+function moz-build { make -f ~/mozilla/mozilla-$1/client.mk build; }
+
+# colorize make
+make()
+{
+  pathpat="(/[^/]*)+:[0-9]+"
+  ccred=$(echo -e "\033[0;31m")
+  ccyellow=$(echo -e "\033[0;33m")
+  ccgreen=$(echo -e "\033[0;32m")
+  ccend=$(echo -e "\033[0m")
+  /usr/bin/make "$@" 2>&1 | sed -E -e "/[Ee]rror[: ]/ s%$pathpat%$ccred&$ccend%g" -e "/[Ww]arning[: ]/ s%$pathpat%$ccyellow&$ccend%g" -e "s/(TEST-UNEXPECTED-[A-Z]+)/$ccred\1$ccend/" -e "s/(TEST-PASS)/$ccgreen\1$ccend/"
+  return ${PIPESTATUS[0]}
+}

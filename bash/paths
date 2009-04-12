@@ -1,2 +1,10 @@
-export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
-export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+# MacPorts
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
+
+# ~/bin
+export PATH=$HOME/bin:$PATH
+
+# MySQL
+export PATH=/usr/local/mysql/bin:$PATH
+export MANPATH=/usr/local/mysql/man:$MANPATH
