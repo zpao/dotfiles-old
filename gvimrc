@@ -58,3 +58,6 @@ if version >= 500
 
 endif
 
+" Set default window height & width
+set lines=50
+set columns=120
