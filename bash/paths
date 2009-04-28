@@ -1,6 +1,7 @@
 # MacPorts
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
+export PATH=/opt/local/lib/postgresql83/bin/:$PATH
 
 # ~/bin
 export PATH=$HOME/bin:$PATH
