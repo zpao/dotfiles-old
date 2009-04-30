@@ -9,7 +9,7 @@ alias pwdcp="pwd | pbcopy"
 
 # I like my uuids to be lowercase (as is standard at Mozilla)
 # Also copy to clipboard because I'm going to copy it anyway
-alias uuid="ruby -e 'puts %x[uuidgen].strip.downcase' | pbcopy"
+alias uuidcp="ruby -e 'print %x[uuid].strip' | pbcopy"
 
 # ls variations
 alias ls="ls -FGa"
