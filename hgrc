@@ -5,12 +5,13 @@ export = -g
 
 [ui]
 username = Paul O’Shannessy <paul@oshannessy.com>
+ignore = ~/.hgignore
 
 [diff]
 git = 1
 unified = 8
 ignorews = True
-howfunc = True
+showfunc = True
 
 [extdiff]
 cmd.opendiff = opendiff-w
@@ -21,5 +22,11 @@ filemerge.args = $local $other -ancestor $base -merge $output
 
 [extensions]
 hgext.mq =
+hgext.rebase =
+hgext.purge =
 color =
+qimportbz = /Users/pao/.hgext/qimportbz
+crecord = /Users/pao/.hgext/crecord/crecord
+hgext.bookmarks =
+hgext.hg-git = /Users/pao/.hgext/hg-git
 
