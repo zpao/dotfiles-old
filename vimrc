@@ -80,7 +80,11 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
-set list listchars=tab:>~,trail:.
+set list listchars=tab:»»,trail:·
+
+" smarter case sensitivity in searches
+set ignorecase
+set smartcase
 
 "Spell checking
 "setlocal spell spelllang=en_us
@@ -92,13 +96,15 @@ set list listchars=tab:>~,trail:.
 
 au FileType make setlocal noexpandtab
 
-colorscheme desert
+colorscheme ir_black
 
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>D :execute 'NERDTreeToggle'<CR>
 
 map <leader>t :FuzzyFinderFile<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
+map <leader>T :FuzzyFinderTag<CR>
+map <leader>Y :TlistToggle<CR>
 
 map <silent> <F5> :if &background == "light"<CR>set background=dark<CR>else<CR>set background=light<CR>endif<CR>
-
+vmap <Leader>h :<C-U>!hg blame -fu <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
