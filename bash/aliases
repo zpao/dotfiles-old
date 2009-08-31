@@ -7,6 +7,9 @@ alias reload='. ~/.bash_profile'
 # copy current directory to the clipboard (OS X specific)
 alias pwdcp="pwd | pbcopy"
 
+# Better hack for cloning a Terminal tab: http://gist.github.com/124402
+alias nt="terminal_clone_tab"
+
 # I like my uuids to be lowercase (as is standard at Mozilla)
 # Also copy to clipboard because I'm going to copy it anyway
 alias uuidcp="ruby -e 'print %x[uuid].strip' | pbcopy"
