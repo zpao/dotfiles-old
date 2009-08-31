@@ -1,8 +1,31 @@
 . $topsrcdir/browser/config/mozconfig
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-debug
-ac_add_options --disable-libxul
-ac_add_options --enable-debug --disable-optimize
-ac_add_options --enable-shared --disable-static
-ac_add_options --with-macos-sdk=/Developer/SDKs/MacOSX10.5.sdk
+
 mk_add_options MOZ_MAKE_FLAGS="-s -j4"
 mk_add_options AUTOCONF=autoconf213
+
+# FIREFOX
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-debug
+
+# DEFAULT DEBUG
+ac_add_options --disable-libxul
+ac_add_options --enable-debug
+ac_add_options --disable-optimize
+ac_add_options --enable-shared
+ac_add_options --disable-static
+ac_add_options --with-macos-sdk=/Developer/SDKs/MacOSX10.5.sdk
+ac_add_options --disable-crashreporter
+
+# WITH SHARK JS
+# ac_add_options --enable-libxul
+# ac_add_options --enable-optimize
+# ac_add_options --enable-shark
+# ac_add_options --enable-debugger-info-modules
+
+# DTRACE
+#ac_add_options --enable-dtrace
+#mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-dtrace
+
+
+# Extensions
+#ac_add_options --enable-application=extensions
+#ac_add_options --enable-extensions=mozkeychain
