@@ -86,6 +86,10 @@ set list listchars=tab:»»,trail:·
 set ignorecase
 set smartcase
 
+" Don't write backup files since I don't use them anyway
+set nobackup
+set nowritebackup
+
 "Spell checking
 "setlocal spell spelllang=en_us
 "highlight SpellBad term=standout cterm=underline
