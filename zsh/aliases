@@ -1,10 +1,13 @@
+# general
+alias reload='source ~/.zshrc'
+
 # cd
 alias ..='cd ..'
 
 # ls
-alias ls="ls -F"
+alias ls="ls -FGa"
 alias l="ls -lAh"
-alias ll="ls -l"
+alias ll="ls -lh"
 alias la='ls -A'
 
 # git
@@ -30,3 +33,20 @@ alias rst='touch tmp/restart.txt'
 
 # commands starting with % for pasting from web
 alias %=' '
+
+# hg
+# perform hg commands on the patch queue
+alias mq='hg -R $(hg root)/.hg/patches'
+alias hgd='hg diff | vless -'
+
+# colorize make
+make()
+{
+  pathpat="(/[^/]*)+:[0-9]+"
+  ccred=$(echo -e "\033[0;31m")
+  ccyellow=$(echo -e "\033[0;33m")
+  ccgreen=$(echo -e "\033[0;32m")
+  ccend=$(echo -e "\033[0m")
+  /usr/bin/make "$@" 2>&1 | sed -E -e "/[Ee]rror[: ]/ s%$pathpat%$ccred&$ccend%g" -e "/[Ww]arning[: ]/ s%$pathpat%$ccyellow&$ccend%g" -e "s/(TEST-UNEXPECTED-[A-Z]+)/$ccred\1$ccend/" -e "s/(TEST-PASS)/$ccgreen\1$ccend/"
+  return ${PIPESTATUS[0]}
+}
