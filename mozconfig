@@ -5,15 +5,17 @@ mk_add_options AUTOCONF=autoconf213
 
 # FIREFOX
 mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-debug
+# mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-ff-opt
 
 # DEFAULT DEBUG
-ac_add_options --disable-libxul
+# ac_add_options --disable-libxul
 ac_add_options --enable-debug
 ac_add_options --disable-optimize
 ac_add_options --enable-shared
 ac_add_options --disable-static
-ac_add_options --with-macos-sdk=/Developer/SDKs/MacOSX10.5.sdk
+# ac_add_options --with-macos-sdk=/Developer/SDKs/MacOSX10.5.sdk
 ac_add_options --disable-crashreporter
+# ac_add_options --enable-services-sync
 
 # WITH SHARK JS
 # ac_add_options --enable-libxul
@@ -29,3 +31,7 @@ ac_add_options --disable-crashreporter
 # Extensions
 #ac_add_options --enable-application=extensions
 #ac_add_options --enable-extensions=mozkeychain
+
+# Use ccache
+# export CC="ccache gcc"
+# export CXX="ccache g++"

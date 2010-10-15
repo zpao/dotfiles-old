@@ -1,18 +1,20 @@
 [user]
-	name = Paul O’Shannessy
-	email = paul@oshannessy.com
+  name = Paul O’Shannessy
+  email = paul@oshannessy.com
 [alias]
-	co = checkout
-	st = status
+  co = checkout
+  st = status
+  brlog = log master..
+  brdiff = branch-diff
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 [core]
-	excludesfile = /Users/pao/.gitignore
-	editor = mate -w
+  excludesfile = /Users/pao/.gitignore
+  editor = mate -w
 [apply]
-	whitespace = nowarn
+  whitespace = nowarn
 [github]
-	user = zpao
-	token = f1dd79c9cfb1dcd8cfc910e46f6ad2d1
+  user = zpao
+  token = f1dd79c9cfb1dcd8cfc910e46f6ad2d1

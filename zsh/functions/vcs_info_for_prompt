@@ -1,0 +1,21 @@
+__vcs_get_repo_type()
+{
+  # return the type of the closest repository in the path hierarchy
+  local dir
+  while true; do
+    [ -d ${dir}.git ] && echo git && break
+    [ -d "$GIT_DIR" ] && echo git && break
+    [ -d ${dir}.bzr ] && echo bzr && break
+    [ -d ${dir}.hg ] && echo hg && break
+    [ "$(readlink ${dir:-.})" = / ] && echo NONE && break
+    dir="../$dir"
+  done
+}
+
+local repotype="${1:-$(__vcs_get_repo_type)}"
+
+case "$repotype" in
+  git)
+    git_info_for_prompt
+    ;;
+esac

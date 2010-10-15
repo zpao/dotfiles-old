@@ -2,3 +2,10 @@
 .svn
 *~
 *swp
+*sw*
+*.pyc
+
+# Oh Moz
+obj-*/
+configure
+.mozconfig*

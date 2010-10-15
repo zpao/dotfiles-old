@@ -37,7 +37,7 @@ alias %=' '
 # hg
 # perform hg commands on the patch queue
 alias mq='hg -R $(hg root)/.hg/patches'
-alias hgd='hg diff | vless -'
+alias hgd='hg diff | mate'
 
 # colorize make
 make()
@@ -50,3 +50,19 @@ make()
   /usr/bin/make "$@" 2>&1 | sed -E -e "/[Ee]rror[: ]/ s%$pathpat%$ccred&$ccend%g" -e "/[Ww]arning[: ]/ s%$pathpat%$ccyellow&$ccend%g" -e "s/(TEST-UNEXPECTED-[A-Z]+)/$ccred\1$ccend/" -e "s/(TEST-PASS)/$ccgreen\1$ccend/"
   return ${PIPESTATUS[0]}
 }
+
+# new tab
+alias nt="terminal_clone_tab"
+
+# Various Firefox's
+alias firefox36="/Applications/Firefox\ 3.6.app/Contents/MacOS/firefox-bin"
+alias minefield="/Applications/Minefield.app/Contents/MacOS/firefox-bin"
+# alias minefield-dev="/Users/pao/mozilla/mozilla-central-dev/obj-ff-debug/dist/MinefieldDebug.app/Contents/MacOS/firefox -purgecaches"
+alias minefield-dev="/Users/pao/mozilla/mozilla-central-dev/obj-ff-debug/dist/MinefieldDebug.app/Contents/MacOS/firefox"
+alias minefield-opt="/Users/pao/mozilla/mozilla-central-dev/obj-ff-opt/dist/Minefield.app/Contents/MacOS/firefox"
+alias namoroka-dev="/Users/pao/mozilla/mozilla-1.9.2-dev/obj-ff-debug/dist/NamorokaDebug.app/Contents/MacOS/firefox"
+alias js="/Users/pao/mozilla/mozilla-central-dev/obj-js-debug/dist/bin/js"
+alias fennec="/Applications/Fennec.app/Contents/MacOS/fennec"
+
+# Copy uuid to clipboard & strip new line
+alias uuidcp="ruby -e 'print %x[uuidgen].strip' | pbcopy"

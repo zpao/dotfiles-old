@@ -3,6 +3,7 @@ function d { cd $CODE/$1; }
 
 # misc
 alias reload='. ~/.bash_profile'
+alias cleanup='find . -name "*~" -type f -print0|xargs -0 rm'
 
 # copy current directory to the clipboard (OS X specific)
 alias pwdcp="pwd | pbcopy"

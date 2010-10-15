@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/pao/dev/edna-rails'
+let g:netrw_dirhist_2='/Users/pao/mozilla/mozmill-tests/firefox/testSessionStore'
+let g:netrw_dirhist_3='/Users/pao/dev/edna-rails'
+let g:netrw_dirhist_4='/Users/pao/Dropbox/Secret Portal/Wedding Stuffs/Websitey'
+let g:netrw_dirhist_5='/Users/pao/dev/zarzpao.com'
+let g:netrw_dirhist_6='/Users/pao/dev/holman-dotfiles'
+let g:netrw_dirhist_7='/Users/pao/mozilla/mozilla-central-git-dev/browser/components/sessionstore/test'

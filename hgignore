@@ -1,5 +1,5 @@
 ~$
-swp$
+(swp|swo)$
 (^|/)\.DS_Store$
 rej$
 orig$

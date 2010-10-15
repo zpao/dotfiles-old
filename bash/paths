@@ -3,9 +3,14 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 export PATH=/opt/local/lib/postgresql83/bin/:$PATH
 
+# ccache
+export PATH=/usr/local/Cellar/ccache/3.1/libexec:$PATH
+
 # ~/bin
 export PATH=$HOME/bin:$PATH
 
 # MySQL
 export PATH=/usr/local/mysql/bin:$PATH
 export MANPATH=/usr/local/mysql/man:$MANPATH
+
+export PYTHONPATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages:$PYTHONPATH

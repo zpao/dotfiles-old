@@ -75,7 +75,7 @@ endif " has("autocmd")
 
 set number
 
-set ts=2
+set ts=4
 set tabstop=2
 set shiftwidth=2
 set expandtab
@@ -100,15 +100,22 @@ set nowritebackup
 
 au FileType make setlocal noexpandtab
 
-colorscheme ir_black
+colorscheme mustang
 
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>D :execute 'NERDTreeToggle'<CR>
 
 map <leader>t :FuzzyFinderFile<CR>
+map <leader>t :CommandT<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>T :FuzzyFinderTag<CR>
 map <leader>Y :TlistToggle<CR>
 
 map <silent> <F5> :if &background == "light"<CR>set background=dark<CR>else<CR>set background=light<CR>endif<CR>
-vmap <Leader>h :<C-U>!hg blame -fu <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+map <leader>h :<C-U>!hg blame -fu <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
+map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
